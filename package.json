@@ -1,0 +1,18 @@
+{
+  "name": "proyecto-argentina-programa-4.0",
+  "version": "1.0.0",
+  "description": "proyecto final Argentina programa 4.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mattscr/Comision-21524B-Rodriguez-matias.git"
+  },
+  "author": "Rodriguez Matias",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
