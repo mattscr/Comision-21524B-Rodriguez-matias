@@ -4,12 +4,20 @@ const morgan = require('morgan')
 const ejs = require('ejs')
 const { sequelize } = require('./database')
 require('./models/post')
+const path = require('node:path')
 
 const app = express()
 
 app.use(express.json())
 app.use(cors())
 app.use(morgan('dev'))
+
+app.set('view engine', 'ejs')
+app.set('views', path.join(__dirname, 'views'))
+app.use(express.static('public'))
+app.get('/', (req,res) => {
+    res.render('index', {title: "Home" })
+})
 
 app.use('/posts', require('../src/routes/posts.routes'))
 
