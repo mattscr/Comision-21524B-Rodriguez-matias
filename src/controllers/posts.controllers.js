@@ -57,7 +57,7 @@ const deletePost = async (req, res) => {
         where : {id: id}
     })
 
-    res.send('post eliminado con exito')
+    res.status(201).send('post eliminado con exito', res.redirect('/'))
     } catch (error) {
         res.status(500).send('error al eliminar')    
     }
