@@ -5,6 +5,8 @@ const ejs = require('ejs')
 const { sequelize } = require('./database')
 require('./models/post')
 const path = require('node:path')
+require('dotenv').config();
+
 
 const app = express()
 

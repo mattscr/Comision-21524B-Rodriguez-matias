@@ -1,6 +1,7 @@
 const { Sequelize } = require('sequelize')
+require('dotenv').config();
 
-const sequelize = new Sequelize ('foro', 'root', '', {
+const sequelize = new Sequelize ('foro', process.env.USER_MYSQL, process.env.PASSWORD_MYSQL, {
     host: 'localhost',
     dialect: 'mysql'
 })
