@@ -4,7 +4,7 @@ const { sequelize } = require('../database')
 const PostModel = sequelize.define('post', {
     titulo: {
         type: DataTypes.STRING,
-        unique: true,
+        unique: false,
         defaultValue : "Nuevo titulo"},
     contenido: {
         type: DataTypes.STRING,

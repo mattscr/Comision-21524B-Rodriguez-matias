@@ -23,11 +23,13 @@ const getPostbyId = async (req, res) =>{
 
 const crearNuevoPost = async (req, res) => {
     try {
+        console.log(req.body);
         const { titulo, contenido, link_img } = req.body
 
     await PostModel.create({ titulo, contenido, link_img })
 
-    res.status(201).send('post creado con exito')
+    
+    res.status(201).send('post creado con exito', res.redirect('/'))
     } catch (error) {
         res.status(500).send('error al crear post')
     }

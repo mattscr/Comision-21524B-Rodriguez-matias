@@ -5,20 +5,31 @@ const ejs = require('ejs')
 const { sequelize } = require('./database')
 require('./models/post')
 const path = require('node:path')
+const { PostModel } = require('./models/post')
+const { log } = require('node:console')
 require('dotenv').config();
+
 
 
 const app = express()
 
 app.use(express.json())
+app.use(express.urlencoded({ extended: false }))
 app.use(cors())
 app.use(morgan('dev'))
 
 app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname, 'views'))
 app.use(express.static('public'))
-app.get('/', (req,res) => {
-    res.render('index', {title: "Home" })
+
+
+
+app.get('/', async (req,res) => {
+    const post = await PostModel.findAll()
+    res.render('index', {title: "Home", post: post.reverse() })
+})
+app.get('/nuevo-post', (req,res) =>{
+    res.render('./nuevopost')
 })
 
 app.use('/posts', require('../src/routes/posts.routes'))
