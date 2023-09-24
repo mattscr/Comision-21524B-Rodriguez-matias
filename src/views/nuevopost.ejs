@@ -8,23 +8,41 @@
         <title>Proyecto argentina programa </title>
     </head>
     <body>
+
         <%- include ('partials/navbar') %>
+
+      <div class="container p-4">
+         <div class="card mx-3 mt-n5 shadow-lg" style="border-radius:0px; border:none">
+          <div class="card-body p-5">
+            <h4 class="card-title mb-3 text-dark text-uppercase text-center" style="font-weight:700">Nuevo post</h4>
+      
+            <form action="/posts" method="POST">
+              <div class="form-floating mb-3">
+                 <input type="text" name="titulo" class="form-control" id="floatingTextInput1" placeholder="Titulo" required>
+                 <label for="floatingTextInput1">Titulo</label>
+              </div>
+                
+              
+              <div class="form-floating mb-3">
+                <input type="text" name="contenido" class="form-control" id="floatingTextInput2" placeholder="contenido" style="height: 100px" required>
+                <label for="floatingTextarea2">Contenido</label>
+              </div>
+
+              <div class="form-floating mb-3">
+                <input type="text" name="link_img" class="form-control"  id="floatingTextInput3" required>
+                <label for="floatingTextInput3" >URL imagen</label>
+              </div>
+
+              <br>
+              <div class="text-center">
+              <button class="btn btn-primary" style="border-radius:0px">Crear</button>
+            </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      
         
-        <form action="/posts" method="POST">
-          <div class="mb-3">
-            <label for="titulo" class="form-label">Titulo</label>
-            <input type="text" name="titulo" class="form-control" > 
-          </div>
-          <div class="mb-3">
-            <label for="contenido" class="form-label">contenido</label>
-            <input type="text" name="contenido" class="form-control" >
-          </div>
-          <div class="mb-3">
-            <label for="imagen" class="form-label">URL imagen</label>
-            <input type="text" name="link_img" class="form-control" >
-          </div>
-          <button  class="btn btn-primary">crear</button>
-        </form>
         
         <%- include ('partials/footer') %>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>

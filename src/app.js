@@ -31,12 +31,17 @@ app.get('/', async (req,res) => {
 app.get('/nuevo-post', (req,res) =>{
     res.render('./nuevopost')
 })
+app.get('/actualizar-post/:id', async (req, res) => {
+    const id = req.params.id
+    const post = await PostModel.findByPk(id)
+    res.render('actualizarpost', { post })
+})
 
 app.use('/posts', require('../src/routes/posts.routes'))
 
 app.listen(3000, () => {
-    sequelize.sync()
+    sequelize.sync({force: false})
         .then(() => console.log("db conectada"))
         .catch((error) => console.log(error))
-    console.log('escuchando en puerto 3000')
+    console.log('escuchando en puerto 3000, http://localhost:3000')
 })

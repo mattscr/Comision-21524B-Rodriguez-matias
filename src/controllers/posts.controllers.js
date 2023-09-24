@@ -29,7 +29,7 @@ const crearNuevoPost = async (req, res) => {
     await PostModel.create({ titulo, contenido, link_img })
 
     
-    res.status(201).send('post creado con exito', res.redirect('/'))
+    res.redirect('/')
     } catch (error) {
         res.status(500).send('error al crear post')
     }
@@ -38,13 +38,12 @@ const crearNuevoPost = async (req, res) => {
 const updatePost = async (req, res) => {
     try {
         const id = req.params.id
-    const { titulo, contenido, link_img } = req.body
-
-    await PostModel.update({ titulo, contenido, link_img }, {
-        where: { id: id }
-    })
-
-    res.send('post editado con exito')
+        const { titulo, contenido, link_img } = req.body
+        
+        const idPost = await PostModel.findByPk(id)
+        await idPost.update({ titulo, contenido, link_img })
+    
+        res.redirect('/');
     } catch (error) {
         res.status(500).send('error al actualizar post')
     }
@@ -57,7 +56,7 @@ const deletePost = async (req, res) => {
         where : {id: id}
     })
 
-    res.status(201).send('post eliminado con exito', res.redirect('/'))
+    res.redirect('/')
     } catch (error) {
         res.status(500).send('error al eliminar')    
     }

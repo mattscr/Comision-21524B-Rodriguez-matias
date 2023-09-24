@@ -1,6 +1,30 @@
-<li>
-    <h4 class="display-4"><%= post.titulo %></h4>
-    <span class="lead" ><%= post.contenido %></span>
-    <img src="<%= post.link_img %>" >
-    <a href="/posts/eliminar-post/<%= post.id %>" class="btn btn-danger">eliminar</a>
-</li>
+<section class="light">
+	<div class="container py-2">
+		
+		<article class="postcard light blue">
+			<a class="postcard__img_link" href="#">
+				<img class="postcard__img" src="<%= post.link_img %>" alt="Image Title" />
+			</a>
+			<div class="postcard__text t-dark">
+				<h1 class="postcard__title blue"><a href="#"><%= post.titulo %></a></h1>
+				<div class="postcard__subtitle small">
+					<time datetime="<%= post.createdAt.toLocaleString() %>">
+						<i class="lni lni-calendar"></i> <%= post.updatedAt.toLocaleString() %>
+					</time>
+				</div>
+				<div class="postcard__bar"></div>
+				<div class="postcard__preview-txt"> <%= post.contenido %> </div>
+				<ul class="postcard__tagbox">
+					<li class="tag__item"><i class="lni lni-user"></i> Usuario</li>
+					<li class="tag__item play blue">
+						<a href="/actualizar-post/<%= post.id %>"><i class="lni lni-reload"></i> Actualizar</a>
+					</li>
+                    <li class="tag__item play red">
+						<a href="/posts/eliminar-post/<%= post.id %>"><i class="lni lni-trash-can"></i> Eliminar</a>
+					</li>
+				</ul>
+			</div>
+		</article>
+		
+	</div>
+</section>
