@@ -2,7 +2,7 @@
 <h1 align="center"> Argentina programa 4.0 </h1>
 
    <p align="center">
-   <img src="https://img.shields.io/badge/STATUS-EN%20DESAROLLO-green">
+   <img src="https://img.shields.io/badge/status-final-green">
    </p>
 
 Este es el proyecto final integrador del curso Argentina programa 4.0 en el mismo se debe realizar un foro personalizado para Publicar Contenido Multitemático
@@ -21,7 +21,7 @@ Este es el proyecto final integrador del curso Argentina programa 4.0 en el mism
 
 ## 📁  Acceso al proyecto
 
-clonar el remositorio mediante `git clone` 
+clonar el repositorio mediante `git clone` 
 ```
 git clone https://github.com/mattscr/Comision-21524B-Rodriguez-matias
 ```
