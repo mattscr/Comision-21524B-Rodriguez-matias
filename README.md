@@ -9,7 +9,7 @@ Este es el proyecto final integrador del curso Argentina programa 4.0 en el mism
 
 ## ⚙ Tecnologias
 
-[![My Skills](https://skills.thijs.gg/icons?i=js,nodejs,html,css,express,bootstrap,mysql)](https://skills.thijs.gg)
+[![My Skills](https://skills.thijs.gg/icons?i=js,nodejs,html,css,express,bootstrap,mysql)]
 
 
 ## 🔨 Funcionalidades del Foro

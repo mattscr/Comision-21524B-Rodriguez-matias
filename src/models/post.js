@@ -1,6 +1,7 @@
 const { DataTypes } = require('sequelize')
 const { sequelize } = require('../database')
 
+//Modelo de Post
 const PostModel = sequelize.define('post', {
     titulo: {
         type: DataTypes.STRING,
@@ -17,5 +18,9 @@ const PostModel = sequelize.define('post', {
         unique:false
     }
 })
+
+/*
+Nota: para el campo ID y fecha de creacion utiliza las creada por defecto => id, createdAt, updatedAt
+*/
 
 module.exports = { PostModel }

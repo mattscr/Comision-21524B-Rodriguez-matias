@@ -1,5 +1,6 @@
 const { PostModel } = require ('../models/post')
 
+//obtiene todos los post
 const getAllPost = async (req, res) => {
     try {
         const allPost = await PostModel.findAll()
@@ -10,7 +11,7 @@ const getAllPost = async (req, res) => {
     }
     
 }
-
+//obtiene el post por su ID
 const getPostbyId = async (req, res) =>{
     try {
         const postId = await PostModel.findByPk(req.params.id)
@@ -20,7 +21,7 @@ const getPostbyId = async (req, res) =>{
         res.status(500).send('error al mostrar post por ID')
     }
 }
-
+//crea un post
 const crearNuevoPost = async (req, res) => {
     try {
         console.log(req.body);
@@ -34,7 +35,7 @@ const crearNuevoPost = async (req, res) => {
         res.status(500).send('error al crear post')
     }
 }
-
+//actualiza un post
 const updatePost = async (req, res) => {
     try {
         const id = req.params.id
@@ -48,7 +49,7 @@ const updatePost = async (req, res) => {
         res.status(500).send('error al actualizar post')
     }
 }
-
+//elimina un post por su ID
 const deletePost = async (req, res) => {
     try {
         const id = req.params.id
